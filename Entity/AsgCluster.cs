@@ -8,7 +8,7 @@ namespace ApexUtility.Entity
 {
     public class AsgCluster
     {
-
+         
 
         public string Name { get; set; }
         public List<Intent> Intents { get; set; }
