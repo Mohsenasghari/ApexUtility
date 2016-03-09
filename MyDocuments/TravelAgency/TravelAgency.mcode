@@ -1,0 +1,21 @@
+\Title{Belen and Pedro TravelAgency}
+\Name {TravelAgency}
+\TrainingInstances {7}
+\TestInstances {0}
+\NumberofAttributes {4}
+\NumberofClass {1}
+\AttributeSeperator {,}
+\CaseSeperator {EOL} /*End Of Line*/
+\Start{attribute}
+   --(1)"Case" \string\ [1] \case\ {Name of each case}
+   --(2) "Destination"  \string\[1]  {spain - NewYourk - England }
+   --(3) "HolidayType"	 \string\[1] {Education - Skiing - Active}
+   --(4) "Transportation" \string\[1] {Car - Plane - Train}
+   --(5) "Season"  \string\[1] {Summer - winter - Autumn- spring}
+\End{attribute}
+
+\MissingAttributeValues {none};
+
+/* 
+
+ */

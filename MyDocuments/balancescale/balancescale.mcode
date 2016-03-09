@@ -1,0 +1,49 @@
+\Title{balance-scale data}
+\Name {balancescale}
+\TrainingInstances {625}
+\TestInstances {0}
+\NumberofAttributes {4}
+\NumberofClass {1}
+\AttributeSeperator {,}
+\CaseSeperator {EOL} /*End Of Line*/
+\Start{attribute}
+   --(1)"Case" \string\ [1] \case\ {Name of each case}
+   --(2) "Class"  \string\[1] \class\  {L, B, R}
+   --(3) "LeftWeight"	 \int\[1-2-3-4-5] {1, 2, 3, 4, 5}
+   --(4) "LeftDistance" \int\[1-2-3-4-5] {1, 2, 3, 4, 5}
+   --(5) "RightWeight"  \int\[1-2-3-4-5] {1, 2, 3, 4, 5}
+   --(6) "RightDistance" \int\[1-2-3-4-5] {1, 2, 3, 4, 5}
+\End{attribute}
+
+\MissingAttributeValues {none};
+
+/* 
+    4. Relevant Information: 
+	This data set was generated to model psychological
+	experimental results.  Each example is classified as having the
+	balance scale tip to the right, tip to the left, or be
+	balanced.  The attributes are the left weight, the left
+	distance, the right weight, and the right distance.  The
+	correct way to find the class is the greater of 
+	(left-distance * left-weight) and (right-distance *
+	right-weight).  If they are equal, it is balanced.
+
+5. Number of Instances: 625 (49 balanced, 288 left, 288 right)
+
+6. Number of Attributes: 4 (numeric) + class name = 5
+
+7. Attribute Information:
+	1. Class Name: 3 (L, B, R)
+	2. Left-Weight: 5 (1, 2, 3, 4, 5)
+	3. Left-Distance: 5 (1, 2, 3, 4, 5)
+	4. Right-Weight: 5 (1, 2, 3, 4, 5)
+	5. Right-Distance: 5 (1, 2, 3, 4, 5)
+
+8. Missing Attribute Values: 
+	none
+
+9. Class Distribution: 
+   1. 46.08 percent are L
+   2. 07.84 percent are B
+   3. 46.08 percent are R
+ */

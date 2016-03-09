@@ -1,0 +1,20 @@
+\Title{Sample Data}
+\Name {Galois}
+\TrainingInstances {0}
+\TestInstances {0}
+\NumberofAttributes {4}
+\NumberofClass {4}
+\AttributeSeperator {,}
+\CaseSeperator {EOL} /*End Of Line*/
+\Start{attribute}
+   --(1)"Case" \string\ [1] \case\ {Name of each case}
+   --(2) "F"          \boolean\[0-1]  {Female}
+   --(3) "J"	          \boolean\[0-1] {Juvenile}
+   --(4) "a"           \boolean\[0-1] {Adult}
+   --(5) "m"           \boolean\[0-1] {Male}
+\End{attribute}
+
+\MissingAttributeValues {none};
+
+/* 
+   */
