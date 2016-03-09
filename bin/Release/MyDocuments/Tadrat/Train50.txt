@@ -1,0 +1,15 @@
+{}->{case12,case3,case8,case7,case4,case5,}
+{Size_3,Leg_4,Nature_2,CP_2,}->{case12,}
+{AS,Size_1,Leg_2,Nature_1,CP_1,}->{case3,}
+{AR,Leg_4,Nature_2,CP_2,Size_2,}->{case8,case7,}
+{AF,AH,Leg_2,Nature_1,CP_1,}->{case4,case5,}
+{Size_1,Leg_2,Nature_1,CP_1,}->{case3,case4,}
+{Leg_4,Nature_2,CP_2,}->{case12,case8,case7,}
+{Size_2,}->{case8,case7,case5,}
+{AH,}->{case8,case4,case5,}
+{Leg_2,Nature_1,CP_1,}->{case3,case4,case5,}
+{AH,Size_2,}->{case8,case5,}
+{Size_1,AF,AH,Leg_2,Nature_1,CP_1,}->{case4,}
+{Size_2,AF,AH,Leg_2,Nature_1,CP_1,}->{case5,}
+{AH,AR,Leg_4,Nature_2,CP_2,Size_2,}->{case8,}
+{CP_1,Nature_1,Leg_2,AH,Size_2,CP_2,Nature_2,Leg_4,Size_1,AF,AR,AS,Size_3,}->{}

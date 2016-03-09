@@ -1,0 +1,5 @@
+{}->{case10,case2,case12,}
+{AH,AR,Size_3,Leg_4,Nature_2,CP_2,}->{case10,}
+{Size_1,Leg_2,Nature_1,CP_1,}->{case2,}
+{Size_3,Leg_4,Nature_2,CP_2,}->{case10,case12,}
+{CP_2,Nature_2,Leg_4,Size_3,CP_1,Nature_1,Leg_2,Size_1,AR,AH,}->{}

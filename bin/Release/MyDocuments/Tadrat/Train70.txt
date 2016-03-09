@@ -1,0 +1,9 @@
+{}->{case12,case6,case2,case9,}
+{Size_3,Leg_4,Nature_2,CP_2,}->{case12,}
+{Size_2,AH,AR,Leg_4,Nature_2,CP_2,}->{case6,}
+{Leg_2,Nature_1,CP_1,Size_1,}->{case2,}
+{AH,AR,Leg_4,Nature_2,CP_2,}->{case6,case9,}
+{Size_1,}->{case2,case9,}
+{Leg_4,Nature_2,CP_2,}->{case12,case6,case9,}
+{Size_1,AH,AR,Leg_4,Nature_2,CP_2,}->{case9,}
+{CP_2,Nature_2,Leg_4,Size_1,AR,AH,CP_1,Nature_1,Leg_2,Size_2,Size_3,}->{}

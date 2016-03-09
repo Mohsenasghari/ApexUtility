@@ -1,0 +1,24 @@
+\Title{Tadrat Sample Data}
+\Name {Tadrat}
+\TrainingInstances {0}
+\TestInstances {0}
+\NumberofAttributes {13}
+\NumberofClass {2}
+\AttributeSeperator {,}
+\CaseSeperator {EOL} /*End Of Line*/
+\Start{attribute}
+   --(1)"Case" \string\ [1] \case\ {Name of each case}
+   --(2) "Size"          \int\[1-2-3]   {1=small , 2= medium,3=big}
+   --(3) "Leg"	\int\[2-4] 	{has 2 leg or 4 leg}
+   --(4) "Nature"	\int\[1-2] 	{Nature Feather = 1, Hair = 2}
+   --(5) "AF"	\boolean\[0-1]	{Action Fly}
+   --(6) "AS"	\boolean\[0-1]	{Action Swim}
+  --(7) "AH"	\boolean\[0-1] 	{Action Hunt}
+  --(8) "AR"	\boolean\[0-1] 	{Action Run}
+  --(9) "CP"	\int\[1-2] \class\	{Class Poultry = 1-Terrestrial-Animal = 2}
+\End{attribute}
+
+\MissingAttributeValues {none};
+
+/* 
+   */

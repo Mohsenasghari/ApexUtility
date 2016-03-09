@@ -1,0 +1,58 @@
+\Title{Zoo Database}
+\Name {MyZoo}
+\TrainingInstances {132}
+\TestInstances {101}
+\NumberofAttributes {18}
+\NumberofClass {1}
+\AttributeSeperator {,}
+\CaseSeperator {EOL} /*End Of Line*/
+\Start{attribute}
+   --(1) "animalname"  \string\  [1]  \case\  {Unique for each instance}
+   --(2) "hair"	\boolean\ [0-1] 	{Boolean}
+   --(3) "feathers"	\boolean\[0-1] 	{Boolean}
+   --(4) "eggs"	\boolean\[0-1] \refuse\	{Boolean}
+   --(5) "milk"	\boolean\[0-1] \refuse\	{Boolean}
+   --(6) "airborne"	\boolean\[0-1] \refuse\	{Boolean}
+   --(7) "aquatic"	\boolean\[0-1] 	{Boolean}
+   --(8) "predator"	\boolean\[0-1]	{Boolean}
+   --(9) "toothed"	\boolean\[0-1]	{Boolean}
+  --(10) "backbone"	\boolean\[0-1] \refuse\	{Boolean}
+  --(11) "breathes"	\boolean\[0-1] \refuse\	{Boolean}
+  --(12) "venomous"	\boolean\[0-1]	{Boolean}
+  --(13) "fins"	\boolean\[0-1]	{Boolean}
+  --(14) "legs"	\int\ [0-2-4-5-6-8]	{Numeric (set of values: {0,2,4,5,6,8})}
+  --(15) "tail"	\boolean\[0-1]	{Boolean}
+  --(16) "domestic"	\boolean\[0-1] \refuse\	{Boolean}
+  --(17) "catsize"	\boolean\[0-1] \refuse\	{Boolean}
+  --(18) "type"	\int\[1-2-3-4-5-6-7]	\class\ {Numeric (integer values in range [1,7])}
+\End{attribute}
+
+\MissingAttributeValues {none};
+
+/* 
+ Relevant Information:
+   -- A simple database containing 17 Boolean-valued attributes.  The "type"
+      attribute appears to be the class attribute.  Here is a breakdown of
+      which animals are in which type: (I find it unusual that there are
+      2 instances of "frog" and one of "girl"!)
+
+      Class# Set of animals:
+      ====== ===============================================================
+           1 (41) aardvark, antelope, bear, boar, buffalo, calf,
+                  cavy, cheetah, deer, dolphin, elephant,
+                  fruitbat, giraffe, girl, goat, gorilla, hamster,
+                  hare, leopard, lion, lynx, mink, mole, mongoose,
+                  opossum, oryx, platypus, polecat, pony,
+                  porpoise, puma, pussycat, raccoon, reindeer,
+                  seal, sealion, squirrel, vampire, vole, wallaby,wolf
+           2 (20) chicken, crow, dove, duck, flamingo, gull, hawk,
+                  kiwi, lark, ostrich, parakeet, penguin, pheasant,
+                  rhea, skimmer, skua, sparrow, swan, vulture, wren
+           3 (5)  pitviper, seasnake, slowworm, tortoise, tuatara 
+           4 (13) bass, carp, catfish, chub, dogfish, haddock,
+                  herring, pike, piranha, seahorse, sole, stingray, tuna
+           5 (4)  frog, frog, newt, toad 
+           6 (8)  flea, gnat, honeybee, housefly, ladybird, moth, termite, wasp
+           7 (10) clam, crab, crayfish, lobster, octopus,
+                  scorpion, seawasp, slug, starfish, worm
+  */
