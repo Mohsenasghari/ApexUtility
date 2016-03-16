@@ -20,4 +20,9 @@ namespace ApexUtility.Entity
 
         public List<AttributeStructure> Attributes { get; set; }
     }
+    public class TestTrainStructure
+    {
+        public string Title { get; set; }
+
+    }
 }

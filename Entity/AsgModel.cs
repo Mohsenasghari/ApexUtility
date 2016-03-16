@@ -393,8 +393,8 @@ namespace ApexUtility.Entity
                     {
                         if (item.IsClasslable == false)
                         {
-                            Part2 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2) * item.ClusterWeight);
-                            //Part2 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2));
+                            //Part2 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2) * item.ClusterWeight);
+                            Part2 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2));
                         }
                     }
                 }
@@ -406,8 +406,8 @@ namespace ApexUtility.Entity
                     {
                         if (item.IsClasslable == false)
                         {
-                            Part3 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2) * item.ClusterWeight);
-                            //Part3 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2));
+                            //Part3 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2) * item.ClusterWeight);
+                            Part3 += (Math.Pow(Math.Log10(item.Frequency != 0 ? N / item.Frequency : 1), 2));
                         }
                     }
                 }
