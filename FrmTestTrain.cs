@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace ApexUtility
@@ -15,9 +16,12 @@ namespace ApexUtility
     {
         public Entity.FCADataSet FCAData { get; set; }
         public Entity.DataStructure DataStructure { get; set; }
+        public Dictionary<string, List<double>> RunAccuracy;
         public FrmTestTrain()
         {
+            
             InitializeComponent();
+            RunAccuracy = new Dictionary<string, List<double>>();
         }
         void ShowLog(string log)
         {
@@ -35,8 +39,10 @@ namespace ApexUtility
             {
                 try
                 {
+                    RunAccuracy.Clear(); 
                     for (int j = 0; j < NumberOfTry.Value; j++)
                     {
+                        RunAccuracy.Add("Run" + j, new List<double>());
                         int _start = Convert.ToInt32(start.Value);
                         int _end = Convert.ToInt32(end.Value);
                         int _interval = Convert.ToInt32(interval.Value);
@@ -73,11 +79,79 @@ namespace ApexUtility
                             frmresult.Log.Text = _log;
                             frmresult.Show();
                             ListTesttrain.Add(tt);
+                            RunAccuracy["Run" + j].Add(tt.Accuracy);
                             ShowLog("-----------------------------------------");
                         }
                         smr.RenderChart(ListTesttrain);
-                        smr.ShowDialog();
+                        if (showResultOfEachIteration.Checked)
+                        {
+                            smr.ShowDialog();  
+                        }
                     }
+                    TabControl charttabs = new TabControl();
+                    ChartArea totalresultchartarea = new ChartArea();
+                    Chart totalresult = new Chart();
+                    totalresult.ChartAreas.Add(totalresultchartarea);
+                    totalresult.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+
+                    ChartArea Avgchartarea = new ChartArea();
+                    Chart AverageResult = new Chart();
+                    AverageResult.ChartAreas.Add(Avgchartarea);
+                    AverageResult.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+
+                    ChartArea VarianceChartArea = new ChartArea();
+                    Chart VarianceResult = new Chart();
+                    VarianceResult.ChartAreas.Add(VarianceChartArea);
+                    VarianceResult.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+
+
+
+
+                    foreach (var item in RunAccuracy)
+                    {
+                        var  series = totalresult.Series.Add(item.Key);
+                        series.ChartType = SeriesChartType.Line;
+                        foreach (var accuracies in item.Value)
+                        {
+                            series.Points.Add(accuracies);
+                        }
+                    }
+                    totalresult.Dock = DockStyle.Fill;
+                    TabPage accuracytab = new TabPage("Total Result");
+                    accuracytab.Controls.Add(totalresult);
+                    charttabs.TabPages.Add(accuracytab);
+
+
+                    var seriesaverage = AverageResult.Series.Add("AverageResults");
+                    seriesaverage.ChartType = SeriesChartType.Line;
+                    foreach (var item in RunAccuracy)
+                    {
+                        seriesaverage.Points.Add(item.Value.Average());
+                    }
+                    AverageResult.Dock = DockStyle.Fill;
+                    TabPage AVGtab = new TabPage("Average Result");
+                    AVGtab.Controls.Add(AverageResult);
+                    charttabs.TabPages.Add(AVGtab);
+
+
+                    var seriesvarieance = VarianceResult.Series.Add("AverageResults");
+                    seriesvarieance.ChartType = SeriesChartType.Line;
+                    foreach (var item in RunAccuracy)
+                    {
+                        double avg = item.Value.Average();
+                        double summofsquerindifference = item.Value.Select(val => (val - avg) * (val - avg)).Sum();
+                        double standardvariance = Math.Sqrt(summofsquerindifference / item.Value.Count);
+                        seriesvarieance.Points.Add(standardvariance);
+                    }
+                    Form showchartresults = new Form();
+                    VarianceResult.Dock = DockStyle.Fill;
+                    TabPage STVtab = new TabPage("Standard Varience Result");
+                    STVtab.Controls.Add(VarianceResult);
+                    charttabs.TabPages.Add(STVtab);
+
+                    charttabs.Dock = DockStyle.Fill;
+                    showchartresults.Controls.Add(charttabs);
+                    showchartresults.ShowDialog();
                 }
                 catch (Exception ex)
                 {

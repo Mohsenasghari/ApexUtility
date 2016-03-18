@@ -38,11 +38,12 @@
             this.showlogtextbox = new System.Windows.Forms.RichTextBox();
             this.Decrease = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NumberOfTry = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.NumberOfTry = new System.Windows.Forms.NumericUpDown();
+            this.showResultOfEachIteration = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.start)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.interval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end)).BeginInit();
@@ -145,6 +146,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.showResultOfEachIteration);
             this.groupBox1.Controls.Add(this.NumberOfTry);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -163,6 +165,27 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test Data Seting";
+            // 
+            // NumberOfTry
+            // 
+            this.NumberOfTry.Location = new System.Drawing.Point(61, 91);
+            this.NumberOfTry.Name = "NumberOfTry";
+            this.NumberOfTry.Size = new System.Drawing.Size(47, 20);
+            this.NumberOfTry.TabIndex = 12;
+            this.NumberOfTry.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Number Of Try";
             // 
             // label6
             // 
@@ -191,26 +214,15 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "%";
             // 
-            // label7
+            // showResultOfEachIteration
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Number Of Try";
-            // 
-            // NumberOfTry
-            // 
-            this.NumberOfTry.Location = new System.Drawing.Point(61, 91);
-            this.NumberOfTry.Name = "NumberOfTry";
-            this.NumberOfTry.Size = new System.Drawing.Size(47, 20);
-            this.NumberOfTry.TabIndex = 12;
-            this.NumberOfTry.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.showResultOfEachIteration.AutoSize = true;
+            this.showResultOfEachIteration.Location = new System.Drawing.Point(153, 94);
+            this.showResultOfEachIteration.Name = "showResultOfEachIteration";
+            this.showResultOfEachIteration.Size = new System.Drawing.Size(169, 17);
+            this.showResultOfEachIteration.TabIndex = 13;
+            this.showResultOfEachIteration.Text = "Show Result Of Each Iteration";
+            this.showResultOfEachIteration.UseVisualStyleBackColor = true;
             // 
             // FrmTestTrain
             // 
@@ -250,5 +262,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown NumberOfTry;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox showResultOfEachIteration;
     }
 }
