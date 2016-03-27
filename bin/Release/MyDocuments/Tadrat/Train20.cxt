@@ -6,12 +6,12 @@ B
 case1
 case2
 case3
+case4
 case5
 case6
-case7
 case8
 case9
-case11
+case10
 case12
 CP_1
 AF
@@ -29,10 +29,10 @@ Size_3
 XXXXX........
 X.XXX........
 X.XXXX.......
+XXXXX.X......
 XXXX..XX.....
 ......XXXXXX.
-.......XXXXX.
 ......XXXXXX.
 ....X.X.XXXX.
-........XXXXX
+......X.XXXXX
 ........X.XXX

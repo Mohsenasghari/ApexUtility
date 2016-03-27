@@ -3,19 +3,19 @@ B
 6
 13
 
+case1
 case3
-case4
 case5
-case7
 case8
+case10
 case12
 CP_1
-AS
+AF
 Nature_1
 Leg_2
 Size_1
+AS
 AH
-AF
 Size_2
 CP_2
 AR
@@ -23,8 +23,8 @@ Nature_2
 Leg_4
 Size_3
 XXXXX........
-X.XXXXX......
-X.XX.XXX.....
-.......XXXXX.
-.....X.XXXXX.
+X.XXXX.......
+XXXX..XX.....
+......XXXXXX.
+......X.XXXXX
 ........X.XXX

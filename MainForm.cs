@@ -578,5 +578,11 @@ namespace ApexUtility
                 File.Delete(exelocation + "\\concepts.txt");
             }
         }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            FrmOutPut result = new FrmOutPut();
+            result.ShowDialog();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace ApexUtility
         public Dictionary<string, List<double>> RunAccuracy;
         public FrmTestTrain()
         {
-            
+
             InitializeComponent();
             RunAccuracy = new Dictionary<string, List<double>>();
         }
@@ -39,7 +39,7 @@ namespace ApexUtility
             {
                 try
                 {
-                    RunAccuracy.Clear(); 
+                    RunAccuracy.Clear();
                     for (int j = 0; j < NumberOfTry.Value; j++)
                     {
                         RunAccuracy.Add("Run" + j, new List<double>());
@@ -85,7 +85,7 @@ namespace ApexUtility
                         smr.RenderChart(ListTesttrain);
                         if (showResultOfEachIteration.Checked)
                         {
-                            smr.ShowDialog();  
+                            smr.ShowDialog();
                         }
                     }
                     TabControl charttabs = new TabControl();
@@ -104,12 +104,9 @@ namespace ApexUtility
                     VarianceResult.ChartAreas.Add(VarianceChartArea);
                     VarianceResult.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
 
-
-
-
                     foreach (var item in RunAccuracy)
                     {
-                        var  series = totalresult.Series.Add(item.Key);
+                        var series = totalresult.Series.Add(item.Key);
                         series.ChartType = SeriesChartType.Line;
                         foreach (var accuracies in item.Value)
                         {
@@ -122,16 +119,28 @@ namespace ApexUtility
                     charttabs.TabPages.Add(accuracytab);
 
 
+                    Panel averagepanel = new Panel();
                     var seriesaverage = AverageResult.Series.Add("AverageResults");
                     seriesaverage.ChartType = SeriesChartType.Line;
+                    Entity.OutPut.Results.Add(DataStructure.Name + Entity.OutPut.IndexRun, new List<double>());
                     foreach (var item in RunAccuracy)
                     {
                         seriesaverage.Points.Add(item.Value.Average());
+                        Entity.OutPut.Results[DataStructure.Name + Entity.OutPut.IndexRun].Add(item.Value.Average());
                     }
-                    AverageResult.Dock = DockStyle.Fill;
+                    AverageResult.Dock = DockStyle.Top;
+                    PropertyGrid _PropertyGrid = new System.Windows.Forms.PropertyGrid();
+                    _PropertyGrid.SelectedObject = AverageResult;
+                    _PropertyGrid.Dock = DockStyle.Fill;
+                    averagepanel.Controls.Add(AverageResult);
+                    averagepanel.Controls.Add(_PropertyGrid);
+                    _PropertyGrid.BringToFront();
+                    averagepanel.Dock = DockStyle.Fill;
+
                     TabPage AVGtab = new TabPage("Average Result");
-                    AVGtab.Controls.Add(AverageResult);
+                    AVGtab.Controls.Add(averagepanel);
                     charttabs.TabPages.Add(AVGtab);
+                    Entity.OutPut.IndexRun++;
 
 
                     var seriesvarieance = VarianceResult.Series.Add("AverageResults");

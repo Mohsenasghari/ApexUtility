@@ -54,9 +54,9 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.getCxt = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.splitter3 = new System.Windows.Forms.Splitter();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.DataProperties = new System.Windows.Forms.TabControl();
@@ -64,6 +64,8 @@
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.propertyGrid2 = new System.Windows.Forms.PropertyGrid();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.ToolBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.DataViewer.SuspendLayout();
@@ -104,7 +106,9 @@
             this.toolStripSeparator3,
             this.ShowFCA_Icon,
             this.toolStripSeparator5,
-            this.TestTrain_Algorithm});
+            this.TestTrain_Algorithm,
+            this.toolStripSeparator7,
+            this.toolStripButton1});
             this.ToolBox.Location = new System.Drawing.Point(0, 0);
             this.ToolBox.Name = "ToolBox";
             this.ToolBox.Size = new System.Drawing.Size(1123, 50);
@@ -308,20 +312,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.Image = global::ApexUtility.Properties.Resources._1456962598_document_open;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(141, 22);
-            this.toolStripButton6.Text = "Open Folder Location";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButton7
             // 
             this.toolStripButton7.Image = global::ApexUtility.Properties.Resources._1456962620_network_workgroup;
@@ -330,6 +320,20 @@
             this.toolStripButton7.Size = new System.Drawing.Size(145, 22);
             this.toolStripButton7.Text = "Run Inclose Algorithm";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Image = global::ApexUtility.Properties.Resources._1456962598_document_open;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(141, 22);
+            this.toolStripButton6.Text = "Open Folder Location";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // splitter3
             // 
@@ -403,6 +407,20 @@
             this.propertyGrid2.Size = new System.Drawing.Size(186, 468);
             this.propertyGrid2.TabIndex = 4;
             // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 50);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(96, 47);
+            this.toolStripButton1.Text = "Show Results";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,6 +492,8 @@
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.PropertyGrid propertyGrid2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

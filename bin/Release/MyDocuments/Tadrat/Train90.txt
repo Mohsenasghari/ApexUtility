@@ -1,4 +1,4 @@
-{Leg_4,Nature_2,CP_2,}->{case12,case7,}
+{}->{case12,case1,}
 {Size_3,Leg_4,Nature_2,CP_2,}->{case12,}
-{Size_2,AR,Leg_4,Nature_2,CP_2,}->{case7,}
-{CP_2,Nature_2,Leg_4,AR,Size_2,Size_3,}->{}
+{Size_1,Leg_2,Nature_1,AF,CP_1,}->{case1,}
+{CP_1,AF,Nature_1,Leg_2,Size_1,CP_2,Nature_2,Leg_4,Size_3,}->{}
