@@ -1,0 +1,6 @@
+{
+  "name": "Apexutility",
+  "tagline": "Formal Concept Analysis and New Similarity Method In c#",
+  "body": "### Welcome to GitHub Pages.\r\nMy Name is Mohsen Asghari. I have been developing This project for two months, it is based on C# and we are trying to create tools for generating Formal Concept Analysis in order to enhance the similarity accuracy of Cased-based reasoning systems.   \r\n\r\n### Designer Templates\r\nThis program uses Inclose algorithm, that is available on \"https://sourceforge.net/projects/inclose/\" SourceForge\r\n\r\n### Creating pages manually\r\nThis utility is fully open-source and it is created in order to increase similarity and case retrieval in CBR cycle.\r\n\r\n\r\n### Support or Contact\r\nmohsen.asghari@gmail.com",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
