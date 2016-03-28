@@ -29,44 +29,51 @@ namespace ApexUtility
             {
                 this.Invoke((MethodInvoker)delegate
                 {
-                    showlogtextbox.Text += log + Environment.NewLine;
+                    showlogtextbox.Text = log + Environment.NewLine + showlogtextbox.Text;
                 });
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            showlogtextbox.Text = "";
             Task.Factory.StartNew(() =>
             {
                 try
                 {
-                    RunAccuracy.Clear();
-                    for (int j = 0; j < NumberOfTry.Value; j++)
+                    if (this.InvokeRequired)
                     {
-                        RunAccuracy.Add("Run" + j, new List<double>());
-                        int _start = Convert.ToInt32(start.Value);
-                        int _end = Convert.ToInt32(end.Value);
-                        int _interval = Convert.ToInt32(interval.Value);
-                        if (Decrease.Checked)
+                        this.Invoke((MethodInvoker)delegate
                         {
-                            _interval = _interval * -1;
-                        }
+                            button1.Enabled = false;
+                        });
+                    }
+                    int _start = Convert.ToInt32(start.Value);
+                    int _end = Convert.ToInt32(end.Value);
+                    int _interval = Convert.ToInt32(interval.Value);
+                    if (Decrease.Checked)
+                    {
+                        _interval = _interval * -1;
+                    }
 
-                        FrmShowMultiResult smr = new FrmShowMultiResult();
-                        List<TestTrain> ListTesttrain = new List<TestTrain>();
-                        for (int i = _start; i >= _end; i = i + _interval)
+                    FrmShowMultiResult smr = new FrmShowMultiResult();
+                    List<TestTrain> ListTesttrain = new List<TestTrain>();
+                    RunAccuracy.Clear();
+                    for (int i = _start; i >= _end; i = i + _interval)
+                    {
+                        RunAccuracy.Add("Run" + i.ToString(), new List<double>());
+                        for (int j = 0; j < NumberOfTry.Value; j++)
                         {
                             TestTrain tt = new TestTrain();
                             tt.PercentofTestData = i;
                             tt.DataSet = FCAData;
                             tt.DS = DataStructure;
-                            ShowLog("start Create Test Data .... " + i.ToString() + "%");
                             tt.Create();
-                            ShowLog("Start Calculate Accuracy...." + i.ToString() + "%");
+                            ShowLog("Training...." + (100 - i).ToString() + "%");
                             string _log = tt.CalculateAccuracyASGModel();
                             FrmResult frmresult = new FrmResult();
                             frmresult.TopLevel = false;
-                            TabPage ResultTabpage = new TabPage(i.ToString() + "% TestData");
-                            tt.TestTrainName = i.ToString() + "% TestData";
+                            TabPage ResultTabpage = new TabPage((100 - i).ToString() + "% Training");
+                            tt.TestTrainName = (100 - i).ToString() + "% TestData";
                             smr.tabControl1.TabPages.Add(ResultTabpage);
                             ResultTabpage.Controls.Add(frmresult);
                             frmresult.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -79,15 +86,30 @@ namespace ApexUtility
                             frmresult.Log.Text = _log;
                             frmresult.Show();
                             ListTesttrain.Add(tt);
-                            RunAccuracy["Run" + j].Add(tt.Accuracy);
-                            ShowLog("-----------------------------------------");
+                            ShowLog("Calculated Accuracy.... Training" + (100 - i).ToString() + "%  Run:" + j + " => " + tt.Accuracy + "%");
+                            RunAccuracy["Run" + i.ToString()].Add(tt.Accuracy);
+
                         }
-                        smr.RenderChart(ListTesttrain);
-                        if (showResultOfEachIteration.Checked)
-                        {
-                            smr.ShowDialog();
-                        }
+                        ShowLog("------------------------------------------------------------------");
+                        ShowLog("Average Accuracies" + i.ToString() + "% =>:" + RunAccuracy["Run" + i].Average() + "%");
+                        ShowLog("------------------------------------------------------------------");
+
                     }
+
+                    if (this.InvokeRequired)
+                    {
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            button1.Enabled = true;
+                        });
+                    }
+
+                    smr.RenderChart(ListTesttrain);
+                    if (showResultOfEachIteration.Checked)
+                    {
+                        smr.ShowDialog();
+                    }
+
                     TabControl charttabs = new TabControl();
                     ChartArea totalresultchartarea = new ChartArea();
                     Chart totalresult = new Chart();
@@ -161,10 +183,19 @@ namespace ApexUtility
                     charttabs.Dock = DockStyle.Fill;
                     showchartresults.Controls.Add(charttabs);
                     showchartresults.ShowDialog();
+
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.StackTrace);
+                    if (this.InvokeRequired)
+                    {
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            button1.Enabled = true;
+                        });
+                    }
                 }
             });
 

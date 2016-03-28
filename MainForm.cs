@@ -340,9 +340,11 @@ namespace ApexUtility
                         }
                         if (FCAData.Extents.Contains(new Extent() { Name = attributes[indexcase - 1] }))
                         {
-                            MessageBox.Show("There is a repeated case name " + attributes[indexcase - 1] + " in the line of " + indexcase);
-                            FCAData.AddRelation(attributes[indexcase - 1] + countrepeatedcase.ToString(), fcaattribute.ToArray());
-                            countrepeatedcase++;
+                            if (MessageBox.Show("There is a repeated case name " + attributes[indexcase - 1] + "Do you want to keep it?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                FCAData.AddRelation(attributes[indexcase - 1] + countrepeatedcase.ToString(), fcaattribute.ToArray());
+                                countrepeatedcase++;
+                            }
                         }
                         else
                         {

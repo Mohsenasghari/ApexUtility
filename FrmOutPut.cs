@@ -27,9 +27,11 @@ namespace ApexUtility
                 t.Dock = DockStyle.Fill;
                 t.Text += item.Key + Environment.NewLine;
                 t.Text += "------------------------" + Environment.NewLine;
+                int index = 1;
                 foreach (var results in item.Value)
                 {
-                    t.Text += Math.Round(results,2) + Environment.NewLine;
+                    t.Text += "(" + index + "," + Math.Round(results, 2) + ")" + Environment.NewLine;
+                    index++;
                 }
                 tt.Controls.Add(t);
                 tabControl1.TabPages.Add(tt);

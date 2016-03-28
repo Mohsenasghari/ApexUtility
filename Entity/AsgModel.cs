@@ -189,8 +189,12 @@ namespace ApexUtility.Entity
                 {
                     File.Delete(exelocation + "\\concept_" + DSName + ".txt");
                 }
-                Process calculateinclose = Process.Start(exelocation + "\\Inclose.exe", exelocation + "\\" + "MyDocuments" + "\\" + DS.Name + "\\" + DSName + ".cxt");
 
+                Process calculateinclose = new Process();
+                calculateinclose.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                calculateinclose.StartInfo.FileName = exelocation + "\\Inclose.exe";
+                calculateinclose.StartInfo.Arguments = exelocation + "\\" + "MyDocuments" + "\\" + DS.Name + "\\" + DSName + ".cxt";
+                calculateinclose.Start();
                 calculateinclose.WaitForExit();
                 if (File.Exists(exelocation + "\\" + "MyDocuments" + "\\" + DS.Name + "\\" + DSName + ".txt"))
                 {
