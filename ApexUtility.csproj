@@ -83,7 +83,9 @@
     <Compile Include="Entity\FCADataSet.cs" />
     <Compile Include="Entity\Intent.cs" />
     <Compile Include="Entity\AsgModel.cs" />
-    <Compile Include="Entity\LatexOutPut.cs" />
+    <Compile Include="Entity\LatexOutPut.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Entity\Relation.cs" />
     <Compile Include="Entity\TestTrain.cs" />
     <Compile Include="FrmFCAGenerator.cs">
