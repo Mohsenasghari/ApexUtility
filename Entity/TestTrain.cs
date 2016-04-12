@@ -153,7 +153,12 @@ namespace ApexUtility
                 var ClassOfTestItem = item.Intents.Where(s => s.IsClasslable == true).FirstOrDefault().Name;
 
                 Concept __similarconcept = _FCAModel.AsgSimilarity(item.GetasConcept(true));
-                LogCalculation += _FCAModel.MoreCloserConcept + Environment.NewLine;
+
+                LogCalculation += "Calculation Log" + Environment.NewLine;
+                LogCalculation += _FCAModel.Log + Environment.NewLine;
+                LogCalculation += "End Calculation Log" + Environment.NewLine;
+
+                LogCalculation += "More Closer Concept =>" + _FCAModel.MoreCloserConcept + Environment.NewLine;
                 LogCalculation += " Test Relarion => " + item.ToString() + Environment.NewLine;
                 LogCalculation += " Class Test Relation => " + ClassOfTestItem + Environment.NewLine;
                 LogCalculation += " Similar Concept => " + __similarconcept != null ? __similarconcept.ToString() : "No Case Found" + Environment.NewLine;

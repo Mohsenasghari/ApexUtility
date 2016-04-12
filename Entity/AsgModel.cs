@@ -342,7 +342,7 @@ namespace ApexUtility.Entity
         #region AsgSimilarity
         public Concept AsgSimilarity(Concept NC)
         {
-            Log = "";
+            //Log = "";
             Concept MoreSimilarConcept = new Concept();
             double similarityMeasure = 0;
             int indexconcept = 1;
@@ -354,12 +354,12 @@ namespace ApexUtility.Entity
                 Log += "........ similarity Measured : " + Math.Round(currentsimilarity, 2).ToString();
                 if (currentsimilarity > similarityMeasure)
                 {
-                    MoreCloserConcept = Log + Environment.NewLine;
+                    MoreCloserConcept = item.ToString() + " => with Similarity Measure :" + currentsimilarity + Environment.NewLine;
                     similarityMeasure = currentsimilarity;
                     MoreSimilarConcept = item;
                 }
                 Log += Environment.NewLine;
-                Log = "";
+                //Log = "";
                 indexconcept++;
             }
             return MoreSimilarConcept;
